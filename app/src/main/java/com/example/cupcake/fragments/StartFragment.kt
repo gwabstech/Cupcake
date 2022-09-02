@@ -24,7 +24,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.cupcake.R
-import com.example.cupcake.data.view_model.viewModel
+import com.example.cupcake.data.view_model.ViewModel
 import com.example.cupcake.databinding.FragmentStartBinding
 
 /**
@@ -36,7 +36,7 @@ class StartFragment : Fragment() {
     // This property is non-null between the onCreateView() and onDestroyView() lifecycle callbacks,
     // when the view hierarchy is attached to the fragment.
     private var binding: FragmentStartBinding? = null
-    private val sharedViewModel:viewModel by activityViewModels()
+    private val sharedViewModel:ViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +50,9 @@ class StartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         binding?.apply {
+            viewModel = sharedViewModel
             // Set up the button click listeners
             orderOneCupcake.setOnClickListener { orderCupcake(1) }
             orderSixCupcakes.setOnClickListener { orderCupcake(6) }
@@ -61,7 +63,7 @@ class StartFragment : Fragment() {
     /**
      * Start an order with the desired quantity of cupcakes and navigate to the next screen.
      */
-    fun orderCupcake(quantity: Int) {
+    private fun orderCupcake(quantity: Int) {
         Toast.makeText(activity, "Ordered $quantity cupcake(s)", Toast.LENGTH_SHORT).show()
         sharedViewModel.setQuantity(quantity)
         if (sharedViewModel.hasNoFlavorSet()){
