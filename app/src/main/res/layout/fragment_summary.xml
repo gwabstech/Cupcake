@@ -117,6 +117,15 @@
                 android:layout_marginTop="@dimen/side_margin"
                 android:text="@string/send" />
 
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/side_margin"
+                android:text="@string/cancel" />
+
         </LinearLayout>
     </ScrollView>
 </layout>

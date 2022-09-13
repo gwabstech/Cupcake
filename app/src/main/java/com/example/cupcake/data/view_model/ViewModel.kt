@@ -81,4 +81,6 @@ class ViewModel: ViewModel() {
         }
         _price.value = calculatedPrice
     }
+
+
 }

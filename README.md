@@ -9,6 +9,17 @@ This app demonstrates multiple fragments in an activity, a shared ViewModel acro
 data binding, LiveData, and the Jetpack Navigation component.
 
 
+/*
+Todo
+Extend the Cupcake app with your own variations on the cupcake order flow. Examples:
+
+Offer a special flavor that has some special conditions around it, such as not being available for same day pickup.
+Ask the user for their name for the cupcake order.
+Allow the user to select multiple cupcake flavors for their order if the quantity is more than 1 cupcake.
+What areas of your app would you need to update to accommodate this new functionality?
+*/
+
+
 Pre-requisites
 --------------
 * Familiar with activities and fragments
